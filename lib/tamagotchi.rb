@@ -3,11 +3,21 @@ require ('pry')
 class Tamagotchi
   attr_accessor :name, :food_level, :activity_level, :sleep_level
 
+  @@tamagotchis = {}
+
   def initialize(attributes)
     @name = attributes.fetch(:name)
     @food_level = 10
     @activity_level = 10
     @sleep_level = 10
+  end
+  
+  def save
+    @@tamagotchis = Tamagotchi.new({:name => self.name})
+  end
+  
+  def self.tamagotchis
+    @@tamagotchis
   end
 
   def is_alive?
