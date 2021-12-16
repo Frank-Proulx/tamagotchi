@@ -20,6 +20,8 @@ end
 
 get('/game') do
   @pet = Tamagotchi.tamagotchis
+  @pet.new_timer
+
   erb(:game)
 end
 

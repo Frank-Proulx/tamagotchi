@@ -10,6 +10,7 @@ class Tamagotchi
     @food_level = 10
     @activity_level = 10
     @sleep_level = 10
+    @start_time = Time.now()
   end
   
   def save
@@ -44,29 +45,12 @@ class Tamagotchi
     end
   end
 
+  def new_timer
+    now = Time.now()
+    diff = (now - @start_time).floor()
+    @food_level -= diff
+    @activity_level -= diff
+    @sleep_level -= diff
+    @start_time = now
+  end
 end
-# diff = 0
-# start_time = Time.now() 
-# while is_alive?
-#   sleep 10
-#   @food_level -= 1
-#   @activity_level -= 1
-#   @sleep_level -= 1
-# end
-
-# buttons
-# feed  put to sleep   play with 
-# 1      1              1
-
-# is_alive?
-
-
-# def foodie
-# food = 10
-#   while food > 5
-#     sleep 10
-#     food -= 1
-#     puts food
-#   end
-
-# end

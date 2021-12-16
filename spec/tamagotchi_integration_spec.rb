@@ -26,3 +26,14 @@ describe('increment food, sleep, activity levels', {:type => :feature}) do
     expect(page).to have_content('Activity level: 11')
   end
 end
+
+describe('see if our pet dies', {:type => :feature}) do
+  it('after 10 seconds of sleeping, when feed is clicked our pet dies') do
+    visit ('/home')
+    fill_in('name', :with => 'Toodles')
+    click_on('Start Game!')
+    sleep 10
+    click_on('Feed')
+    expect(page).to have_content('YOUR PET IS DEAD')
+  end
+end
