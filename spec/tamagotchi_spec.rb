@@ -24,4 +24,17 @@ describe('#Tamagotchi') do
       expect(@t.is_alive?).to(eq(false))
     end
   end
+
+  describe('start_timer') do
+    it('should return a dead message after 10 seconds') do
+      start = Time.new()
+      expect(@t.start_timer).to(eq("Alive!"))
+      sleep 10.1
+      expect(@t.start_timer).to(eq("Your tamogatchi is dead"))
+      end_time = Time.new()
+      expect(@t.is_alive?).to(eq(false))
+      # expect(end_time - start).to(eq(10))
+    end
+  end
 end
+

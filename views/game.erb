@@ -1,0 +1,17 @@
+<div>
+
+ <h1><%=@pet.name%></h1>
+<img alt="tamagotchi gif" src="https://64.media.tumblr.com/a356835717e8afce0d654f88d29ac6cc/tumblr_oqk9fwwY491wq3wtao1_500.gifv" width="250">
+</div>
+<form method="post" action="/game">
+  <input name="_method" type="hidden" value="patch">
+  <button class="btn">Feed</button>
+</form>
+<form method="post" action="/game">
+  <input name="_method" type="hidden" value="patch">
+  <button class="btn">Play With</button>
+</form>
+<form method="post" action="/game">
+  <input name="_method" type="hidden" value="patch">
+  <button class="btn">Go Sleep</button>
+</form>

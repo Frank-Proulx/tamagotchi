@@ -20,14 +20,20 @@ class Tamagotchi
 
   def start_timer
     Thread.new do
-      while is_alive? do
-        sleep 5
+      while self.is_alive? do
+        sleep 1
         @food_level -= 1
         @activity_level -= 1
         @sleep_level -= 1
       end
     end
+    if self.is_alive? == false
+      return "Your tamogatchi is dead"
+    else
+      "Alive!"
+    end
   end
+
 end
 # diff = 0
 # start_time = Time.now() 
